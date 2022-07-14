@@ -1,11 +1,15 @@
+import React, { useState } from "react";
+import Button from "./components/Button";
 import Greet from "./components/Greet";
 import Heading from "./components/Heading";
+import Input from "./components/Input";
 import Oscar from "./components/Oscar";
 import Person from "./components/Person";
 import PersonList from "./components/PersonList";
 import Status from "./components/Status";
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
   const personName = {
     first: "Bruce",
     last: "Wayne",
@@ -28,7 +32,7 @@ function App() {
 
   return (
     <>
-      <Greet name="Antony" messageCount={10} isLoggedIn={false} />
+      {/* <Greet name="Antony" messageCount={10} isLoggedIn={false} /> */}
       {/* <Person name={personName} />
       <PersonList names={nameList} />
       <Status status="success" />
@@ -36,6 +40,20 @@ function App() {
       <Oscar>
         <Heading>Oscar goes to Antony Chiramel</Heading>
       </Oscar> */}
+      <Button
+        handleClick={() => {
+          console.log("Button Clicked");
+        }}
+        handleClickWithEvent={(event, id) => {
+          console.log("Button Clicked with Event: ", event, id);
+        }}
+      />
+      <Input
+        value={inputValue}
+        handleChange={(e) => {
+          setInputValue(e.target.value);
+        }}
+      />
     </>
   );
 }
