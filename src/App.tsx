@@ -9,6 +9,10 @@ import Person from "./components/Person";
 import PersonList from "./components/PersonList";
 import LoggedIn from "./components/state/LoggedIn";
 import Status from "./components/Status";
+import Box from "./components/context/Box";
+import { ThemeContextProvider } from "./components/context/ThemeContext";
+import { UserContextProvider } from "./components/context/UserContext";
+import User from "./components/context/User";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -57,7 +61,13 @@ function App() {
         }}
       />
       <Container styles={{ border: "1px solid black", padding: "1rem" }} /> */}
-      <LoggedIn />
+      {/* <LoggedIn />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider> */}
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
     </>
   );
 }
