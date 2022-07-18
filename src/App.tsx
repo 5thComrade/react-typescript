@@ -13,6 +13,8 @@ import Box from "./components/context/Box";
 import { ThemeContextProvider } from "./components/context/ThemeContext";
 import { UserContextProvider } from "./components/context/UserContext";
 import User from "./components/context/User";
+import MutableRef from "./components/refs/MutableRef";
+import List from "./components/generics/List";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -65,9 +67,15 @@ function App() {
       <ThemeContextProvider>
         <Box />
       </ThemeContextProvider> */}
-      <UserContextProvider>
+      {/* <UserContextProvider>
         <User />
       </UserContextProvider>
+      <MutableRef /> */}
+      <List
+        items={["Batman", "Superman", "Wonder Woman"]}
+        onClick={(item) => console.log(item)}
+      />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} />
     </>
   );
 }
