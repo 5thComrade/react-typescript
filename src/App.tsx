@@ -15,6 +15,8 @@ import { UserContextProvider } from "./components/context/UserContext";
 import User from "./components/context/User";
 import MutableRef from "./components/refs/MutableRef";
 import List from "./components/generics/List";
+import RandomNumber from "./components/restriction/RandomNumber";
+import Toast from "./components/templateLiterals/Toast";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -71,11 +73,13 @@ function App() {
         <User />
       </UserContextProvider>
       <MutableRef /> */}
-      <List
+      {/* <List
         items={["Batman", "Superman", "Wonder Woman"]}
         onClick={(item) => console.log(item)}
       />
-      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+      {/* <RandomNumber value={10} isPositive /> */}
+      <Toast position="center"/>
     </>
   );
 }
