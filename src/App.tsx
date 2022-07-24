@@ -17,6 +17,8 @@ import MutableRef from "./components/refs/MutableRef";
 import List from "./components/generics/List";
 import RandomNumber from "./components/restriction/RandomNumber";
 import Toast from "./components/templateLiterals/Toast";
+import CustomButton from "./components/html/CustomButton";
+import { Text } from "./components/polymorphic/Text";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -79,7 +81,19 @@ function App() {
       />
       <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
       {/* <RandomNumber value={10} isPositive /> */}
-      <Toast position="center"/>
+      {/* <Toast position="center" />
+      <CustomButton variant="primary" onClick={() => console.log("Clicked")}>
+        Primary Button
+      </CustomButton> */}
+      <Text as="h1" size="lg">
+        Heading
+      </Text>
+      <Text as="p" size="md">
+        Paragraph
+      </Text>
+      <Text as="label" htmlFor="someId" size="sm" color="secondary">
+        Label
+      </Text>
     </>
   );
 }
